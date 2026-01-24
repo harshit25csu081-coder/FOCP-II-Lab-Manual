@@ -1,0 +1,79 @@
+A teacher wants to calculate the average marks of three students to determine the class performance. 
+Implement a solution to accept three numbers and compute their average.
+#include<iostream>
+using namespace std;
+int main(){
+    int a ,b ,c,avg;
+    cout<<"the marks of 1 student=";
+    cin>>a;
+    cout<<"the marks of 2 student=";
+    cin>>b;
+    cout<<"the marks of 3 student=";
+    cin>>c;
+    avg=(a+b+c)/3;
+    cout<<"the average of 3 students="<<avg<<std::endl;
+    return 0;
+}*/
+
+
+/*An architect wants to calculate the space covered by a circular fountain. Implement a solution to compute 
+the area of a circle.
+
+
+#include<iostream>
+using namespace std;
+int main(){
+    int area, radius;
+    cout<<"enter the radius=";
+    cin>>radius;
+    area=3.14*radius*radius;
+    cout<<" the area is"<<area<<endl;
+    return 0;
+}*/
+
+
+
+question 3
+#include<iostream>
+using namespace std;
+int main(){
+int choice;
+float c, f;
+cout<<"enter the chioce:";
+cin>>choice;
+if (choice ==1){
+cout<<"enter the celsius";
+cin>>c;
+f=(c*9/5)+32;
+cout<<" fahreneit="<<f<<endl;}
+else if(choice==2){
+    cout<<"enter the fahrenheit";
+    cin>>f;
+    c=(f-32)*32;
+    cout<<"celcius<<c<<endl";
+}
+else{
+    cout<<"invalid choice";
+}
+return 0;
+}
+
+
+queston 4
+/*
+#include<iostream>
+using namespace std;
+int main(){
+int item_no , qty;
+float price, discount,total , netamount;
+cout<<"enter the qty,itemno and unit price";
+cin>>qty >> item_no >> price;
+total= qty*price;
+discount=total*0.20;
+netamount=total-discount;
+cout<<"total amount="<<total<<endl;
+cout<<"discount="<<discount<<endl;
+cout<<"netamount="<<netamount<<endl;
+return 0;
+}
+*/
