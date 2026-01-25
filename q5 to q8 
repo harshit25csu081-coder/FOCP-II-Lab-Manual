@@ -17,3 +17,24 @@ int main() {
 
     return 0;
 }
+
+
+
+question 7
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, c;
+    cout << "Enter three scores: ";
+    cin >> a >> b >> c;
+
+    if(a > b && a > c)
+        cout << "Player 1 is winner";
+    else if(b > a && b > c)
+        cout << "Player 2 is winner";
+    else
+        cout << "Player 3 is winner";
+
+    return 0;
+}
