@@ -1,0 +1,31 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+void boolisPrime(int x){
+
+    if(x <= 1){
+        cout<<"not prime";
+        return;
+    }
+
+    for(int i=2;i<=x/2;i++){
+        if(x % i == 0){
+            cout<<"not prime";
+            return;
+        }
+    }
+
+    cout<<"prime";
+}
+
+int main(){
+
+    int x;
+    cout<<"enter the value : ";
+    cin>>x;
+
+    boolisPrime(x);
+
+    return 0;
+}
