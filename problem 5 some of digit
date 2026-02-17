@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+// Recursive function to calculate sum of digits
+int digitSum(int n) {
+    if (n == 0)  // Base case
+        return 0;
+    return (n % 10) + digitSum(n / 10);  // Last digit + sum of remaining digits
+}
+
+int main() {
+    int N;
+    cin >> N;
+
+    if (N < 0) N = -N;  // Handle negative numbers
+
+    int sum = digitSum(N);
+    cout << "Sum of digits: " << sum << endl;
+
+    return 0;
+}
