@@ -1,0 +1,35 @@
+#include<iostream>
+    using namespace std;
+    class Student{
+
+        int rollNo;
+        string name;
+        int marks1,marks2,marks3;
+        public:
+        void input_details(){
+            cout<<"\n enter rollno,name,marks1, marks2,marks3:";
+            cin>>rollNo>>name>>marks1>>marks2>>marks3;
+        }
+        int calculationTotal(){
+            return marks1+marks2+marks3;
+
+        }
+        void display_details(){
+            cout<<"rollno:"<<rollNo<<"\nname:"<<name<<"\nmarks1:"<<marks1<<"\nmarks2:"<<marks2<<"\nmarks3:"<<marks3;
+        }
+
+
+    };
+
+
+
+
+    int main(){
+        
+        Student S1;
+        S1.input_details();
+        S1.display_details();
+        S1.calculationTotal();
+
+        return 0;
+    }
