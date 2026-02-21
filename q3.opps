@@ -23,7 +23,7 @@ public:
     void deposit(double amount)
     {
         balance += amount;
-        cout << "Amount Deposited Successfully.\n";
+        cout << "Amount Deposited Successfully.";
     }
 
     void withdraw(double amount)
@@ -31,11 +31,11 @@ public:
         if(amount <= balance)
         {
             balance -= amount;
-            cout << "Amount Withdrawn Successfully.\n";
+            cout << "Amount Withdrawn Successfully.";
         }
         else
         {
-            cout << "Insufficient Balance!\n";
+            cout << "Insufficient Balance";
         }
     }
 
