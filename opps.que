@@ -1,0 +1,89 @@
+ #include <iostream>
+using namespace std;
+
+class MovieTicket{
+string movieName;
+int seatNumber;
+int ticketPrice;
+bool isBooked;
+
+public:
+void bookTicket();
+void cancelTicket();
+void displayTicketDetails();
+int calculateTotalCost(int numberOfTickets);
+MovieTicket();
+MovieTicket(string m,int s,int p);
+};
+
+void MovieTicket::bookTicket()
+{
+    if(isBooked==false)
+    {
+        isBooked=true;
+        cout<<"\n Ticket Booked Successfully";
+    }
+    else
+    {
+        cout<<"\n Ticket Already Booked";
+    }
+}
+
+void MovieTicket::cancelTicket()
+{
+    if(isBooked==true)
+    {
+        isBooked=false;
+        cout<<"\n Ticket Cancelled";
+    }
+    else
+    {
+        cout<<"\n Ticket Not Booked";
+    }
+}
+
+void MovieTicket::displayTicketDetails()
+{
+    cout<<"\n Movie Name : "<<movieName;
+    cout<<"\n Seat Number : "<<seatNumber;
+    cout<<"\n Ticket Price : "<<ticketPrice;
+    cout<<"\n Booking Status : "<<isBooked;
+}
+
+int MovieTicket::calculateTotalCost(int numberOfTickets)
+{
+    return numberOfTickets * ticketPrice;
+}
+
+MovieTicket::MovieTicket() // default constructor
+{
+    movieName="Not Assigned";
+    seatNumber=0;
+    ticketPrice=200;
+    isBooked=false;
+}
+
+MovieTicket::MovieTicket(string m,int s,int p) // parameterized constructor
+{
+    movieName=m;
+    seatNumber=s;
+    ticketPrice=p;
+    isBooked=false;
+}
+
+int main() {
+
+    MovieTicket t1("Avengers",12,250),t2("Batman",15,300); // objects
+
+    t1.bookTicket();
+    t2.bookTicket();
+
+    t1.displayTicketDetails();
+    t2.displayTicketDetails();
+
+    t1.cancelTicket();
+
+    cout<<"\n Total Cost for 3 tickets : "<<t2.calculateTotalCost(3);
+
+    return 0;
+}
