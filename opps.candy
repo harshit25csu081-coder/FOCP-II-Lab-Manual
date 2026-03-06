@@ -1,0 +1,64 @@
+#include <iostream>
+using namespace std;
+
+class Candy
+{
+    string color;
+    int points;
+
+public:
+    
+    Candy();
+    Candy(string cl, int pt);
+
+    
+    void setCandy(string c, int p);
+    void displayCandy();
+};
+
+
+void Candy::setCandy(string c, int p)
+{
+    color = c;
+    points = p;
+}
+
+
+void Candy::displayCandy()
+{
+    cout << "Color : " << color << endl;
+    cout << "Points : " << points << endl;
+}
+
+// Default constructor
+Candy::Candy()
+{
+    color = "Black";
+    points = 0;
+}
+
+// Parameterized constructor
+Candy::Candy(string cl, int pt)
+{
+    color = cl;
+    points = pt;
+}
+
+int main()
+{
+    Candy c1, c2;
+
+    
+    c1.setCandy("Green", 20);
+    c2.setCandy("Red", 35);
+
+    cout << "Candy 1 Details:" << endl;
+    c1.displayCandy();
+
+    cout << endl;
+
+    cout << "Candy 2 Details:" << endl;
+    c2.displayCandy();
+
+    return 0;
+}
