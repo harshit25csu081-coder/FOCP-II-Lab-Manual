@@ -1,0 +1,72 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Mobile
+{
+private:
+    string brand;
+    int price;
+    int storage;
+
+public:
+    // Constructor 1
+    Mobile(string b);
+
+    // Constructor 2
+    Mobile(string b, int p);
+
+    // Constructor 3
+    Mobile(string b, int p, int s);
+
+    void display();
+};
+
+// Constructor definitions
+
+Mobile::Mobile(string b)
+{
+    brand = b;
+    price = 0;
+    storage = 0;
+}
+
+Mobile::Mobile(string b, int p)
+{
+    brand = b;
+    price = p;
+    storage = 0;
+}
+
+Mobile::Mobile(string b, int p, int s)
+{
+    brand = b;
+    price = p;
+    storage = s;
+}
+
+void Mobile::display()
+{
+    cout<<"Brand: "<<brand<<endl;
+    cout<<"Price: "<<price<<endl;
+    cout<<"Storage: "<<storage<<" GB"<<endl;
+    cout<<endl;
+}
+
+int main()
+{
+    Mobile M1("Samsung");
+    Mobile M2("Realme", 20000);
+    Mobile M3("Apple", 80000, 256);
+
+    cout<<"Mobile 1 Details"<<endl;
+    M1.display();
+
+    cout<<"Mobile 2 Details"<<endl;
+    M2.display();
+
+    cout<<"Mobile 3 Details"<<endl;
+    M3.display();
+
+    return 0;
+}
