@@ -1,0 +1,68 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Laptop
+{
+private: // access specifiers
+    string brand;
+    int ram;
+    int price;
+
+public:
+    void setDetails(string brand);
+    void setDetails(string brand, int ram);
+    void setDetails(string brand, int ram, int price);
+    void display();
+};
+
+// Member function definitions
+
+void Laptop::setDetails(string b)
+{
+    brand = b;
+    ram = 0;
+    price = 0;
+}
+
+void Laptop::setDetails(string b, int r)
+{
+    brand = b;
+    ram = r;
+    price = 0;
+}
+
+void Laptop::setDetails(string b, int r, int p)
+{
+    brand = b;
+    ram = r;
+    price = p;
+}
+
+void Laptop::display()
+{
+    cout<<"Brand: "<<brand<<endl;
+    cout<<"RAM: "<<ram<<" GB"<<endl;
+    cout<<"Price: "<<price<<endl;
+    cout<<endl;
+}
+
+int main()
+{
+    Laptop L1, L2, L3;
+
+    L1.setDetails("HP");
+    L2.setDetails("Dell", 8);
+    L3.setDetails("Lenovo", 16, 65000);
+
+    cout<<"Laptop 1 Details"<<endl;
+    L1.display();
+
+    cout<<"Laptop 2 Details"<<endl;
+    L2.display();
+
+    cout<<"Laptop 3 Details"<<endl;
+    L3.display();
+
+    return 0;
+}
