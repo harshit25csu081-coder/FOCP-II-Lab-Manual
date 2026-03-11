@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+
+class Vehicle{
+string vehicleNumber;
+string ownerName;
+string vehicleType;
+int fee;
+
+public:
+void displayVehicle();
+Vehicle();
+Vehicle(string v,string o);
+Vehicle(string v,string o,string t,int f);
+};
+
+Vehicle::Vehicle()   // Default Constructor
+{
+    vehicleNumber="Not Assigned";
+    ownerName="Unknown";
+    vehicleType="General";
+    fee=0;
+}
+
+Vehicle::Vehicle(string v,string o)   // Parameterized Constructor (2 parameters)
+{
+    vehicleNumber=v;
+    ownerName=o;
+    vehicleType="General";
+    fee=0;
+}
+
+Vehicle::Vehicle(string v,string o,string t,int f)   // Parameterized Constructor (4 parameters)
+{
+    vehicleNumber=v;
+    ownerName=o;
+    vehicleType=t;
+    fee=f;
+}
+
+void Vehicle::displayVehicle()
+{
+    cout<<"\n Vehicle Number : "<<vehicleNumber;
+    cout<<"\n Owner Name : "<<ownerName;
+    cout<<"\n Vehicle Type : "<<vehicleType;
+    cout<<"\n Registration Fee : "<<fee<<"\n";
+}
+
+int main()
+{
+    Vehicle v1;   // Default constructor
+    Vehicle v2("DL01AB1234","Rahul");   // 2-parameter constructor
+    Vehicle v3("HR26CD5678","Aman","Car",5000);   // 4-parameter constructor
+
+    v1.displayVehicle();
+    v2.displayVehicle();
+    v3.displayVehicle();
+
+    return 0;
+}
