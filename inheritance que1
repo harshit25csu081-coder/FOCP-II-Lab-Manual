@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+class Person{
+string name;
+int age;
+public:
+Person(){
+    cout<<"\n person paramertrised";
+    name ="default";
+    age=18;
+}
+Person(string name, int age){
+cout<<"\npersson parameterised";
+this->name=name;
+this->age=age;
+}
+void displayPerson(){
+cout<<"\n name:"<<name<<"\n age:"<<age;
+}
+};
+class Student:public Person{
+ string rollno   ;
+ public:
+ Student(){
+    cout<<"\n stuents default";
+    rollno="25csu081";
+ }
+Student( string nm,int ag, string rno):Person(nm,ag){
+    cout<<"\n students pramerised";
+    rollno=rno;
+}
+void displayStudent(){
+    displayPerson();
+    cout<<"\n rollno:"<<rollno;
+
+}
+};
+int main(){
+    Student P1,P2("unknown",23,"25csu0834") ;
+    P1.displayStudent();
+    P2.displayStudent();
+    return 0;
+}
