@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+class Employee {
+protected:
+    string name;
+
+public:
+    void setName(string n) {
+        name = n;
+    }
+};
+
+class Department {
+protected:
+    string dept;
+
+public:
+    void setDept(string d) {
+        dept = d;
+    }
+};
+
+class Manager : public Employee, public Department {
+public:
+    void display() {
+        cout << "Employee Name: " << name << endl;
+        cout << "Department: " << dept << endl;
+    }
+};
+
+int main() {
+    Manager m;
+
+    m.setName("Harshit");
+    m.setDept("CSE");
+
+    m.display();
+
+    return 0;
+}
