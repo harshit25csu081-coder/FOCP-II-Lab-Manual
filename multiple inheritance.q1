@@ -1,0 +1,45 @@
+ multiple inheritance
+#include<iostream> 
+using namespace std;
+
+// Base class 1
+class Academic{
+protected:
+    int marks;   // protected: accessible in derived class
+
+public:
+    void set_marks(int m){   // function to set marks
+        marks = m;
+    }
+};
+
+// Base class 2
+class Sports{
+protected:
+    int score;   // protected: accessible in derived class
+
+public:
+    void set_score(int s){   // function to set sports score
+        score = s;
+    }
+};
+
+// Derived class using multiple inheritance
+class Result : public Academic, public Sports{
+public:
+    void display(){   // function to display result
+        cout << "Scores: " << score << endl;   // accessing Sports class member
+        cout << "Marks: " << marks << endl;    // accessing Academic class member
+    }
+};
+
+int main(){
+    Result r;   // object of derived class
+
+    r.set_marks(45);   
+    r.set_score(78);   
+
+    r.display();   
+
+    return 0;  
+}
