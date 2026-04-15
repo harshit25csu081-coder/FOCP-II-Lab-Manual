@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+// Base class
+class Animal {
+public:
+    void eat() {
+        cout << "Animal is eating" << endl;
+    }
+};
+
+// Derived class from Animal
+class Dog : public Animal {
+public:
+    void bark() {
+        cout << "Dog is barking" << endl;
+    }
+};
+
+// Derived class from Dog
+class Puppy : public Dog {
+public:
+    void weep() {
+        cout << "Puppy is weeping" << endl;
+    }
+};
+
+int main() {
+    Puppy p;
+
+    p.eat();   // from Animal
+    p.bark();  // from Dog
+    p.weep();  // from Puppy
+
+    return 0;
+}
