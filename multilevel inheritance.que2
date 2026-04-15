@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+// Base class
+class Device {
+public:
+    void powerOn() {
+        cout << "Device is powering on" << endl;
+    }
+};
+
+// Derived from Device
+class Computer : public Device {
+public:
+    void process() {
+        cout << "Computer is processing" << endl;
+    }
+};
+
+// Derived from Computer
+class Laptop : public Computer {
+public:
+    void carry() {
+        cout << "Laptop is easy to carry" << endl;
+    }
+};
+
+int main() {
+    Laptop l;
+
+    l.powerOn();  // from Device
+    l.process();  // from Computer
+    l.carry();    // from Laptop
+
+    return 0;
+}
