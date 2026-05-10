@@ -1,0 +1,62 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+
+    // 1. WRITE TO FILE
+    ofstream fout("data.txt");
+    fout << "Hello World" << endl;
+    fout << "C++ File Handling Basics" << endl;
+    fout.close();
+
+
+    // 2. APPEND TO FILE
+    ofstream fout2("data.txt", ios::app);
+    fout2 << "This is appended line" << endl;
+    fout2.close();
+
+
+    // 3. READ FROM FILE
+    ifstream fin("data.txt");
+
+    if (!fin) {
+        cout << "File not found!" << endl;
+        return 0;
+    }
+
+    cout << "---- File Content ----" << endl;
+    string line;
+    while (getline(fin, line)) {
+        cout << line << endl;
+    }
+    fin.close();
+
+
+    // 4. COPY FILE CONTENT
+    ifstream fin2("data.txt");
+    ofstream fout3("copy.txt");
+
+    while (getline(fin2, line)) {
+        fout3 << line << endl;
+    }
+
+    fin2.close();
+    fout3.close();
+
+
+    // 5. BINARY FILE EXAMPLE
+    ofstream binOut("data.bin", ios::binary);
+    int x = 100;
+    binOut.write((char*)&x, sizeof(x));
+    binOut.close();
+
+    ifstream binIn("data.bin", ios::binary);
+    int y;
+    binIn.read((char*)&y, sizeof(y));
+    binIn.close();
+
+    cout << "Binary file value: " << y << endl;
+
+    return 0;
+}
